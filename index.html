@@ -4,15 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lorenzo's Lechon – Lipa City</title>
+<meta name="description" content="Affordable & delicious crispy lechon baboy in Lipa City, Batangas. Pre-order for birthdays, fiestas, and every celebration.">
+<meta name="theme-color" content="#0B0B0C">
 <link rel="icon" type="image/png" href="download.png">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;0,900;1,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Lorenzo's Lechon</div>
+  <a class="nav-logo" href="#home" aria-label="Lorenzo's Lechon home">
+    <img src="download.png" alt="Lorenzo's Lechon logo">
+    Lorenzo's <b>Lechon</b>
+  </a>
   <div class="nav-links">
     <a href="#home">Home</a>
     <a href="#menu">Menu</a>
@@ -22,16 +29,38 @@
 
 <!-- HERO -->
 <section id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-badge">Now Accepting Orders</div>
+  <div class="hero-bg" role="img" aria-label="Whole roasted crispy lechon baboy"></div>
+  <span class="hero-badge">Now Accepting Orders</span>
   <h1 class="hero-title">
     Affordable &amp; Delicious.
     <em>Lechon for Everyone!</em>
   </h1>
-  <p class="hero-sub">Crispy, Juicy Lechon for Every Occasion — birthdays, fiestas, or just because.</p>
+  <p class="hero-sub">Crispy skin, juicy meat — authentic Filipino lechon baboy for birthdays, fiestas, or just because.</p>
   <div class="hero-btns">
     <a href="#menu" class="btn-primary">🔥 See Price List</a>
     <a href="#contact" class="btn-secondary">📞 Contact Us</a>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <p class="section-eyebrow">Fresh from the Fire</p>
+  <h2 class="section-title">Our <span>Lechon</span></h2>
+  <div class="divider"></div>
+
+  <div class="gallery-grid">
+    <figure class="gallery-item wide fade-up">
+      <img src="https://loremflickr.com/1200/675/lechon,roasted,pig?lock=31" alt="Whole roasted lechon baboy with crispy golden skin" loading="lazy">
+      <figcaption class="tag">Crispy Skin</figcaption>
+    </figure>
+    <figure class="gallery-item fade-up">
+      <img src="https://loremflickr.com/600/600/lechon,filipino?lock=32" alt="Sliced lechon showing juicy tender meat" loading="lazy">
+      <figcaption class="tag">Juicy Meat</figcaption>
+    </figure>
+    <figure class="gallery-item fade-up">
+      <img src="https://loremflickr.com/600/600/roasted,pig,fiesta?lock=33" alt="Lechon served at a Filipino fiesta celebration" loading="lazy">
+      <figcaption class="tag">Fiesta Ready</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -70,68 +99,72 @@
     </div>
     <div class="price-row">
       <span class="size-name">Medium 1</span>
-      <span class="size-weight">17–19 kls</span>
+      <span class="size-weight">17–19 kg</span>
       <span class="size-price">₱9,400</span>
     </div>
     <div class="price-row">
       <span class="size-name">Medium 2</span>
-      <span class="size-weight">20–21 kls</span>
+      <span class="size-weight">20–21 kg</span>
       <span class="size-price">₱10,000</span>
     </div>
     <div class="price-row">
       <span class="size-name">Large 1</span>
-      <span class="size-weight">22–23 kls</span>
+      <span class="size-weight">22–23 kg</span>
       <span class="size-price">₱10,500</span>
     </div>
     <div class="price-row">
       <span class="size-name">Large 2</span>
-      <span class="size-weight">24–26 kls</span>
+      <span class="size-weight">24–26 kg</span>
       <span class="size-price">₱11,500</span>
     </div>
     <div class="price-row">
       <span class="size-name">Xtra Large</span>
-      <span class="size-weight">27–29 kls</span>
+      <span class="size-weight">27–29 kg</span>
       <span class="size-price">₱12,500</span>
     </div>
     <div class="price-row">
       <span class="size-name">Jumbo 1</span>
-      <span class="size-weight">30–32 kls</span>
+      <span class="size-weight">30–32 kg</span>
       <span class="size-price">₱13,500</span>
     </div>
     <div class="price-row">
       <span class="size-name">Jumbo 2</span>
-      <span class="size-weight">33–35 kls</span>
+      <span class="size-weight">33–35 kg</span>
       <span class="size-price">₱14,500</span>
     </div>
     <div class="price-row">
       <span class="size-name">Fiesta 1</span>
-      <span class="size-weight">36–38 kls</span>
+      <span class="size-weight">36–38 kg</span>
       <span class="size-price">₱15,500</span>
     </div>
     <div class="price-row highlight">
       <span class="size-name">Fiesta 2</span>
-      <span class="size-weight">39–40 kls</span>
+      <span class="size-weight">39–40 kg</span>
       <span class="size-price">₱16,500</span>
     </div>
   </div>
+  <p class="price-note">Prices based on live weight · Pre-order required to secure your date</p>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
   <p class="section-eyebrow">Our Story</p>
-  <h2 class="section-title">Made with <span>Love & Fire</span></h2>
+  <h2 class="section-title">Made with <span>Love &amp; Fire</span></h2>
   <div class="divider"></div>
 
   <div class="about-box fade-up">
-    <p class="about-text">
-      Affordable and delicious lechon for every occasion. Whether it's a birthday, fiesta, or grand celebration — 
-      Lorenzo's Lechon is here to make your event truly special with crispy, juicy, and authentic Filipino lechon.
-    </p>
-    <div class="location-tag">
-      <span class="location-icon">📍</span>
-      <div>
-        <div class="location-name">Antipolo del Norte, Lipa City</div>
-        <div class="location-sub">Batangas, Philippines</div>
+    <img class="about-img" src="https://loremflickr.com/800/520/lechon,roasted,pig?lock=41" alt="Lorenzo's Lechon freshly roasted over coals" loading="lazy">
+    <div class="about-body">
+      <p class="about-text">
+        Affordable and delicious lechon for every occasion. Whether it's a birthday, fiesta, or grand celebration —
+        Lorenzo's Lechon is here to make your event truly special with crispy, juicy, and authentic Filipino lechon.
+      </p>
+      <div class="location-tag">
+        <span class="location-icon" aria-hidden="true">📍</span>
+        <div>
+          <div class="location-name">Antipolo del Norte, Lipa City</div>
+          <div class="location-sub">Batangas, Philippines</div>
+        </div>
       </div>
     </div>
   </div>
@@ -145,19 +178,19 @@
 
   <div class="reviews-list">
     <div class="review-card fade-up">
-      <div class="review-stars">★★★★★</div>
+      <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
       <div class="review-text">"Masarap at super crispy! Lahat ng bisita namin tinanong kung saan galing. Repeat order kami lagi!"</div>
       <div class="review-author">— Maria Santos, Lipa City</div>
     </div>
 
     <div class="review-card fade-up">
-      <div class="review-stars">★★★★★</div>
+      <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
       <div class="review-text">"Nagamit namin sa debut ng anak ko. Ang sarap! Naubos agad kahit maraming pagkain pa. Sulit na sulit!"</div>
       <div class="review-author">— Kuya Rodel, San Jose</div>
     </div>
 
     <div class="review-card fade-up">
-      <div class="review-stars">★★★★★</div>
+      <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
       <div class="review-text">"Grabe ang balat, so crispy! At ang baboy fresh at malinis. Legit na legit — recommended ko sa lahat!"</div>
       <div class="review-author">— Ate Gina, Batangas City</div>
     </div>
@@ -173,7 +206,7 @@
 
   <div class="contact-btns">
     <a href="https://www.facebook.com/lorenzoslechonlipa" class="cta-fb fade-up">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
       Lorenzo's Lechon House
     </a>
     <a href="sms:+639970665673" class="cta-sms fade-up">
@@ -187,7 +220,10 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">🐷 Lorenzo's Lechon</div>
+  <div class="footer-logo">
+    <img src="download.png" alt="">
+    Lorenzo's Lechon
+  </div>
   <p class="footer-sub">Antipolo del Norte, Lipa City · Open Daily · Pre-order required</p>
 </footer>
 
