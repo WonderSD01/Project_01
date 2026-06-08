@@ -44,26 +44,36 @@ body {
   -webkit-font-smoothing: antialiased;
   position: relative;
 
-  /* Global background with local image and dark overlay */
+/* Global background should cover the whole scrollable page */
   background-color: var(--black);
-  background-image: linear-gradient(180deg, rgba(11,11,12,0.92) 0%, rgba(11,11,12,0.95) 55%, rgba(11,11,12,0.98) 100%);
-  background-size: cover;
-  background-position: center;
+  background-image: linear-gradient(180deg, rgba(11,11,12,0.92) 0%, rgba(11,11,12,0.95) 55%, rgba(11,11,12,0.98) 100%), url('Untitled design (1).png');
+  background-attachment: scroll, scroll;
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+
 }
+
+
 /* background image layer with low opacity */
 body::before {
   content: '';
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: -2;
   pointer-events: none;
   background-image: url('Untitled design (1).png');
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: cover;
   background-attachment: scroll;
-  opacity: 0.18;
+  opacity: 0.16;
+  transform: translateZ(0);
 }
+
+
+
+
 /* slow-drifting warm light for "alive" motion */
 body::after {
   content: ''; position: fixed; inset: -25%; z-index: -1; pointer-events: none;
@@ -108,7 +118,8 @@ a:focus-visible, button:focus-visible {
 /* ─── NAV ─── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(11, 11, 12, 0.7);
+  background: rgba(11, 11, 12, 0.84);
+
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   display: flex; align-items: center; justify-content: space-between;
   padding: 12px 18px;
@@ -147,14 +158,16 @@ nav {
   min-height: 100svh;
   display: flex; flex-direction: column; justify-content: flex-end;
   position: relative;
-  padding: 28px 22px 120px;
+  padding: 92px 22px 120px;
   overflow: hidden;
 }
+
 .hero-bg {
   position: absolute; inset: 0;
   background:
     linear-gradient(to top, rgba(7, 7, 7, 0.92) 0%, rgba(10, 10, 10, 0.65) 25%, rgba(10, 10, 10, 0.2) 60%, transparent 100%),
-    url('https://loremflickr.com/1200/1600/lechon,roasted,pig?lock=21') center/cover no-repeat;
+    url('lechon/480740443_651704680757004_8283077934209874498_n.jpg') center/cover no-repeat;
+
   background-color: #1a0606;
   background-attachment: scroll;
   background-blend-mode: overlay;
@@ -198,6 +211,7 @@ nav {
   max-width: 340px; line-height: 1.55; margin-bottom: 30px; position: relative;
 }
 .hero-btns { display: flex; flex-direction: column; gap: 12px; max-width: 380px; position: relative; }
+
 
 /* ─── BUTTONS ─── */
 .btn-primary, .btn-secondary {
@@ -403,23 +417,51 @@ section {
 .location-sub { font-size: 0.78rem; color: var(--muted); }
 
 /* ─── REVIEWS ─── */
-.reviews-list { display: flex; flex-direction: column; gap: 16px; max-width: var(--maxw); margin: 0 auto; }
+.reviews-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
 .review-card {
-  position: relative; background: var(--charcoal); border: 1px solid var(--line);
-  border-radius: var(--radius); padding: 20px 22px 20px 25px; overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  background: rgba(22,22,24,0.85);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .review-card::before {
-  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
-  background: var(--grad-fire); background-size: auto 200%; animation: gradientShift 6s ease infinite;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--grad-fire);
+  background-size: auto 200%;
+  animation: gradientShift 6s ease infinite;
+  z-index: 1;
 }
-.review-card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(225,29,42,0.18); }
-.review-stars {
-  font-size: 1rem; margin-bottom: 10px; letter-spacing: 2px;
-  background: var(--grad-ember); -webkit-background-clip: text; background-clip: text; color: transparent;
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(225,29,42,0.18);
+  border-color: rgba(255,122,24,0.45);
 }
+.review-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16 / 10;
+}
+
+/* keep old text styles harmless if markup changes later */
+.review-stars { font-size: 1rem; margin-bottom: 10px; letter-spacing: 2px; background: var(--grad-ember); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .review-text { font-size: 0.92rem; color: var(--text); line-height: 1.65; margin-bottom: 12px; }
 .review-author { font-size: 0.76rem; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
 
 /* ─── CTA BANNER ─── */
 .cta-banner {
@@ -476,6 +518,17 @@ section {
   border-top: 1px solid var(--line); display: flex; gap: 10px;
   padding: 11px 16px calc(11px + env(safe-area-inset-bottom));
 }
+
+/* prevent sticky bar from overlapping content */
+body {
+  padding-bottom: 92px;
+}
+
+html {
+  background: var(--black);
+}
+
+
 .sticky-bar a {
   position: relative; overflow: hidden; flex: 1;
   display: flex; align-items: center; justify-content: center; gap: 6px;
@@ -508,6 +561,50 @@ footer { background: #060607; padding: 32px 22px 130px; text-align: center; bord
 }
 
 /* ─── RESPONSIVE ─── */
+@media (max-width: 559px) {
+  /* keep mobile layout stable with fixed nav + sticky bar */
+  nav { padding: 10px 14px; }
+  .nav-links { gap: 2px; }
+  .nav-links a { padding: 7px 9px; font-size: 0.74rem; }
+
+  #home { padding: 74px 16px 132px; }
+  section { padding: 52px 16px; }
+
+  /* stack grids */
+  .features-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-item.wide { grid-column: auto; }
+  .stats-band { grid-template-columns: 1fr 1fr; }
+
+  /* price table becomes stacked */
+  .price-table-header {
+    grid-template-columns: 1fr;
+    row-gap: 6px;
+    text-align: left;
+  }
+  .price-table-header span:nth-child(1) { text-align: left; }
+  .price-table-header span:nth-child(2) { text-align: left; }
+  .price-table-header span:nth-child(3) { text-align: left; }
+
+  .price-row {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 6px;
+  }
+  .size-pax { text-align: left; }
+  .size-price { text-align: left; }
+
+  /* how-to steps */
+  .steps { gap: 12px; }
+  .step { flex-direction: row; }
+
+  /* contact buttons */
+  .contact-btns { gap: 11px; }
+
+  /* sticky bar touch targets */
+  .sticky-bar a { font-size: 0.78rem; padding: 13px 6px; }
+}
+
 @media (min-width: 560px) {
   .hero-btns { flex-direction: row; }
   .btn-primary, .btn-secondary { flex: 1; }
@@ -515,3 +612,4 @@ footer { background: #060607; padding: 32px 22px 130px; text-align: center; bord
   .stats-band { grid-template-columns: repeat(4, 1fr); }
 }
 @media (min-width: 720px) { section { padding: 88px 22px; } }
+
