@@ -15,17 +15,22 @@
 <body>
 
 <!-- NAV -->
-<nav>
+<nav id="site-nav">
   <a class="nav-logo" href="#home" aria-label="Lorenzo's Lechon home">
     <img src="download.png" alt="Lorenzo's Lechon logo">
-    Lorenzo's <b>Lechon</b>
+    <span class="nav-logo-text">Lorenzo's <b>Lechon</b></span>
   </a>
-  <div class="nav-links">
+  <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-menu">
     <a href="#home">Home</a>
     <a href="#menu">Menu</a>
+    <a href="#reviews">Reviews</a>
     <a href="#contact">Order</a>
   </div>
 </nav>
+<div class="nav-overlay" id="nav-overlay" hidden aria-hidden="true"></div>
 
 <!-- HERO -->
 <section id="home">
@@ -51,26 +56,34 @@
   </div>
 
   <div class="features-grid">
-<div class="feature-card fade-up">
-      <div class="feature-icon" aria-hidden="true">C</div>
-      <div class="feature-title">Crispy Skin, Always</div>
-      <div class="feature-text">Slow-roasted over charcoal for that signature shatter-crisp balat every single time.</div>
-    </div>
-<div class="feature-card fade-up">
-      <div class="feature-icon" aria-hidden="true">L</div>
-      <div class="feature-title">Fresh &amp; Clean</div>
-      <div class="feature-text">Only fresh, well-cleaned pigs — juicy, tender meat your guests will keep talking about.</div>
-    </div>
-<div class="feature-card fade-up">
-      <div class="feature-icon" aria-hidden="true">D</div>
-      <div class="feature-title">Delivery in Lipa</div>
-      <div class="feature-text">We bring your lechon hot and ready straight to your celebration around Lipa City.</div>
-    </div>
-<div class="feature-card fade-up">
-      <div class="feature-icon" aria-hidden="true">₱</div>
-      <div class="feature-title">Sulit na Presyo</div>
-      <div class="feature-text">Honest, affordable pricing by live weight — premium lechon without the premium markup.</div>
-    </div>
+    <article class="feature-card fade-up">
+      <div class="feature-img" style="background-image: url('lechon/474131947_1172379714461387_3146045806033734417_n.jpg')" role="img" aria-label="Whole roasted lechon with crispy golden skin"></div>
+      <div class="feature-body">
+        <h3 class="feature-title">Crispy Skin, Always</h3>
+        <p class="feature-text">Slow-roasted over charcoal for that signature shatter-crisp balat every single time.</p>
+      </div>
+    </article>
+    <article class="feature-card fade-up">
+      <div class="feature-img" style="background-image: url('lechon/474505015_1173288324370526_5323710664454947870_n.jpg')" role="img" aria-label="Sliced lechon showing juicy tender meat"></div>
+      <div class="feature-body">
+        <h3 class="feature-title">Fresh &amp; Clean</h3>
+        <p class="feature-text">Only fresh, well-cleaned pigs — juicy, tender meat your guests will keep talking about.</p>
+      </div>
+    </article>
+    <article class="feature-card fade-up">
+      <div class="feature-img" style="background-image: url('lechon/480438938_651704527423686_194395341870054605_n.jpg')" role="img" aria-label="Lechon served at a Filipino fiesta"></div>
+      <div class="feature-body">
+        <h3 class="feature-title">Delivery in Lipa</h3>
+        <p class="feature-text">We bring your lechon hot and ready straight to your celebration around Lipa City.</p>
+      </div>
+    </article>
+    <article class="feature-card fade-up">
+      <div class="feature-img" style="background-image: url('lechon/480740443_651704680757004_8283077934209874498_n.jpg')" role="img" aria-label="Lechon freshly roasted over coals"></div>
+      <div class="feature-body">
+        <h3 class="feature-title">Sulit na Presyo</h3>
+        <p class="feature-text">Honest, affordable pricing by live weight — premium lechon without the premium markup.</p>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -125,115 +138,84 @@
   <div class="divider"></div>
 
   <div class="price-table-wrap fade-up">
-    <div class="price-table-header">
-      <span>Size</span>
-      <span>Good For</span>
-      <span>Price</span>
-    </div>
-
-    <div class="price-row">
-      <div class="size-cell">
-        <span class="size-name">De Leche</span>
-        <span class="size-weight">7–9 kg</span>
-      </div>
-      <span class="size-pax">10 pax</span>
-      <span class="size-price">₱7,000</span>
-    </div>
-    <div class="price-row">
-      <div class="size-cell">
-        <span class="size-name">Small 1</span>
-        <span class="size-weight">10–11 kg</span>
-      </div>
-      <span class="size-pax">15 pax</span>
-      <span class="size-price">₱8,000</span>
-    </div>
-    <div class="price-row">
-      <div class="size-cell">
-        <span class="size-name">Small 2</span>
-        <span class="size-weight">12–13 kg</span>
-      </div>
-      <span class="size-pax">18 pax</span>
-      <span class="size-price">₱8,300</span>
-    </div>
-    <div class="price-row">
-      <div class="size-cell">
-        <span class="size-name">Regular</span>
-        <span class="size-weight">14–16 kg</span>
-      </div>
-      <span class="size-pax">25 pax</span>
-      <span class="size-price">₱9,000</span>
-    </div>
-    <div class="price-row">
-      <div class="size-cell">
-        <span class="size-name">Medium 1</span>
-        <span class="size-weight">17–19 kg</span>
-      </div>
-      <span class="size-pax">30 pax</span>
-      <span class="size-price">₱9,400</span>
-    </div>
-    <div class="price-row">
-      <div class="size-cell">
-        <span class="size-name">Medium 2</span>
-        <span class="size-weight">20–21 kg</span>
-      </div>
-      <span class="size-pax">35 pax</span>
-      <span class="size-price">₱10,000</span>
-    </div>
-    <div class="price-row">
-      <div class="size-cell">
-        <span class="size-name">Large 1</span>
-        <span class="size-weight">22–23 kg</span>
-      </div>
-      <span class="size-pax">40 pax</span>
-      <span class="size-price">₱10,500</span>
-    </div>
-    <div class="price-row">
-      <div class="size-cell">
-        <span class="size-name">Large 2</span>
-        <span class="size-weight">24–26 kg</span>
-      </div>
-      <span class="size-pax">50 pax</span>
-      <span class="size-price">₱11,500</span>
-    </div>
-    <div class="price-row">
-      <div class="size-cell">
-        <span class="size-name">Xtra Large</span>
-        <span class="size-weight">27–29 kg</span>
-      </div>
-      <span class="size-pax">60 pax</span>
-      <span class="size-price">₱12,500</span>
-    </div>
-    <div class="price-row">
-      <div class="size-cell">
-        <span class="size-name">Jumbo 1</span>
-        <span class="size-weight">30–32 kg</span>
-      </div>
-      <span class="size-pax">70 pax</span>
-      <span class="size-price">₱13,500</span>
-    </div>
-    <div class="price-row">
-      <div class="size-cell">
-        <span class="size-name">Jumbo 2</span>
-        <span class="size-weight">33–35 kg</span>
-      </div>
-      <span class="size-pax">80 pax</span>
-      <span class="size-price">₱14,500</span>
-    </div>
-    <div class="price-row">
-      <div class="size-cell">
-        <span class="size-name">Fiesta 1</span>
-        <span class="size-weight">36–38 kg</span>
-      </div>
-      <span class="size-pax">90 pax</span>
-      <span class="size-price">₱15,500</span>
-    </div>
-    <div class="price-row highlight">
-      <div class="size-cell">
-        <span class="size-name">Fiesta 2</span>
-        <span class="size-weight">39–40 kg</span>
-      </div>
-      <span class="size-pax">100 pax</span>
-      <span class="size-price">₱16,500</span>
+    <p class="price-scroll-hint" aria-hidden="true">Swipe to see full table →</p>
+    <div class="price-table-scroll" tabindex="0" role="region" aria-label="Lechon price list — scroll horizontally on small screens">
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th scope="col">Size</th>
+            <th scope="col">Good For</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="size-name">De Leche</span><span class="size-weight">7–9 kg</span></td>
+            <td class="size-pax">10 pax</td>
+            <td class="size-price">₱7,000</td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Small 1</span><span class="size-weight">10–11 kg</span></td>
+            <td class="size-pax">15 pax</td>
+            <td class="size-price">₱8,000</td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Small 2</span><span class="size-weight">12–13 kg</span></td>
+            <td class="size-pax">18 pax</td>
+            <td class="size-price">₱8,300</td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Regular</span><span class="size-weight">14–16 kg</span></td>
+            <td class="size-pax">25 pax</td>
+            <td class="size-price">₱9,000</td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Medium 1</span><span class="size-weight">17–19 kg</span></td>
+            <td class="size-pax">30 pax</td>
+            <td class="size-price">₱9,400</td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Medium 2</span><span class="size-weight">20–21 kg</span></td>
+            <td class="size-pax">35 pax</td>
+            <td class="size-price">₱10,000</td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Large 1</span><span class="size-weight">22–23 kg</span></td>
+            <td class="size-pax">40 pax</td>
+            <td class="size-price">₱10,500</td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Large 2</span><span class="size-weight">24–26 kg</span></td>
+            <td class="size-pax">50 pax</td>
+            <td class="size-price">₱11,500</td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Xtra Large</span><span class="size-weight">27–29 kg</span></td>
+            <td class="size-pax">60 pax</td>
+            <td class="size-price">₱12,500</td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Jumbo 1</span><span class="size-weight">30–32 kg</span></td>
+            <td class="size-pax">70 pax</td>
+            <td class="size-price">₱13,500</td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Jumbo 2</span><span class="size-weight">33–35 kg</span></td>
+            <td class="size-pax">80 pax</td>
+            <td class="size-price">₱14,500</td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Fiesta 1</span><span class="size-weight">36–38 kg</span></td>
+            <td class="size-pax">90 pax</td>
+            <td class="size-price">₱15,500</td>
+          </tr>
+          <tr class="highlight">
+            <td><span class="size-name">Fiesta 2</span><span class="size-weight">39–40 kg</span></td>
+            <td class="size-pax">100 pax</td>
+            <td class="size-price">₱16,500</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
   <p class="price-note">Prices based on live weight · Pre-order required to secure your date</p>
@@ -302,32 +284,32 @@
   <h2 class="section-title">Mga <span>Patunay</span></h2>
   <div class="divider"></div>
 
-  <div class="reviews-list">
-    <figure class="review-card fade-up">
-      <img
-        src="reviews/481655799_665384366055702_751848824675598624_n.jpg"
-        alt="Customer review screenshot"
-        loading="lazy"
-      >
-    </figure>
+  <div class="reviews-carousel fade-up" aria-roledescription="carousel" aria-label="Customer reviews">
+    <div class="carousel-viewport">
+      <div class="carousel-track" id="reviews-track"></div>
+    </div>
 
-    <figure class="review-card fade-up">
-      <img
-        src="reviews/481711641_665399436054195_5773579391317457323_n.jpg"
-        alt="Customer review screenshot"
-        loading="lazy"
-      >
-    </figure>
+    <div class="carousel-controls">
+      <button type="button" class="carousel-btn carousel-prev" aria-label="Previous review">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="carousel-dots" id="reviews-dots" role="tablist" aria-label="Review slides"></div>
+      <button type="button" class="carousel-btn carousel-next" aria-label="Next review">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
 
-    <figure class="review-card fade-up">
-      <img
-        src="reviews/481767742_665384482722357_8917426660460996334_n.jpg"
-        alt="Customer review screenshot"
-        loading="lazy"
-      >
-    </figure>
+    <p class="carousel-counter" aria-live="polite">
+      Review <span id="reviews-current">1</span> of <span id="reviews-total">13</span>
+    </p>
   </div>
 </section>
+
+<!-- Lightbox for full-size review view -->
+<div class="review-lightbox" id="review-lightbox" hidden aria-hidden="true">
+  <button type="button" class="lightbox-close" aria-label="Close full-size review">&times;</button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="Customer review screenshot enlarged">
+</div>
 
 
 <!-- CTA BANNER -->
