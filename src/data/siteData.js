@@ -1,7 +1,8 @@
-const img = (path) => new URL(`../../${path}`, import.meta.url).href;
+// Public-folder paths — reliable in dev and production
+const asset = (path) => `/${path.replace(/ /g, '%20')}`;
 
-export const LOGO = img('download.png');
-export const BG_TEXTURE = img('lechon/Untitled design (1).png');
+export const LOGO = asset('download.png');
+export const BG_TEXTURE = asset('lechon/Untitled design (1).png');
 
 export const MAPS_URL = 'https://maps.app.goo.gl/qLsP7hAX2Byi8UyW9';
 
@@ -21,101 +22,76 @@ export const PRICES = [
   { size: 'Fiesta 2', liveWeight: '39–40', pax: 100, price: 16500, featured: true },
 ];
 
+const LECHON_IMAGES = [
+  '474131947_1172379714461387_3146045806033734417_n.jpg',
+  '474505015_1173288324370526_5323710664454947870_n.jpg',
+  '480142836_651704460757026_3616925184819909092_n.jpg',
+  '480438938_651704527423686_194395341870054605_n.jpg',
+  '480740443_651704680757004_8283077934209874498_n.jpg',
+  '481692615_665399819387490_6825367062903201783_n.jpg',
+  '481784191_665396256054513_8668396699942435463_n.jpg',
+  '481944002_666053845988754_2621315149209642743_n.jpg',
+  '482019344_666053939322078_6218074537323391433_n.jpg',
+  '482057442_665392826054856_5530151939591560375_n.jpg',
+  '482216646_666041695989969_7093567185241790847_n.jpg',
+  '482249096_666054052655400_7965097659664388541_n.jpg',
+  'aff1ce1d-85de-40d1-9007-7bfbda54522a.jpg',
+  'IMG_3258_Original.JPG',
+  'IMG_3395_Original.JPG',
+  'IMG_4149_Original.JPG',
+  'IMG_4161_Original.JPG',
+  'IMG_4164_Original.JPG',
+  'IMG_4174_Original.JPG',
+  'IMG_4301_Original.JPG',
+];
+
+const GALLERY_TAGS = [
+  'Crispy Skin',
+  'Juicy Meat',
+  'Fiesta Ready',
+  'Fresh Roast',
+  'Party Size',
+  'Hot & Ready',
+  'Golden Brown',
+  'Family Feast',
+  'Roasted Fresh',
+  "Lorenzo's Best",
+];
+
+const lechon = (file) => asset(`lechon/${file}`);
+
 export const FEATURES = [
   {
     title: 'Crispy Skin, Always',
     text: 'Slow-roasted over charcoal for that signature shatter-crisp balat every single time.',
-    image: img('lechon/474131947_1172379714461387_3146045806033734417_n.jpg'),
+    image: lechon(LECHON_IMAGES[15]),
     alt: 'Whole roasted lechon with crispy golden skin',
   },
   {
     title: 'Fresh & Clean',
     text: 'Only fresh, well-cleaned pigs — juicy, tender meat your guests will keep talking about.',
-    image: img('lechon/474505015_1173288324370526_5323710664454947870_n.jpg'),
+    image: lechon(LECHON_IMAGES[14]),
     alt: 'Sliced lechon showing juicy tender meat',
   },
   {
     title: 'Delivery in Lipa',
     text: 'We bring your lechon hot and ready straight to your celebration around Lipa City.',
-    image: img('lechon/480438938_651704527423686_194395341870054605_n.jpg'),
+    image: lechon(LECHON_IMAGES[16]),
     alt: 'Lechon served at a Filipino fiesta',
   },
   {
     title: 'Sulit na Presyo',
     text: 'Honest, affordable pricing by live weight — premium lechon without the premium markup.',
-    image: img('lechon/480740443_651704680757004_8283077934209874498_n.jpg'),
+    image: lechon(LECHON_IMAGES[12]),
     alt: 'Lechon freshly roasted over coals',
   },
 ];
 
-export const GALLERY = [
-  {
-    src: img('lechon/474131947_1172379714461387_3146045806033734417_n.jpg'),
-    alt: 'Whole roasted lechon baboy with crispy golden skin',
-    tag: 'Crispy Skin',
-    wide: true,
-  },
-  {
-    src: img('lechon/474505015_1173288324370526_5323710664454947870_n.jpg'),
-    alt: 'Sliced lechon showing juicy tender meat',
-    tag: 'Juicy Meat',
-    wide: false,
-  },
-  {
-    src: img('lechon/480438938_651704527423686_194395341870054605_n.jpg'),
-    alt: 'Lechon served at a Filipino fiesta celebration',
-    tag: 'Fiesta Ready',
-    wide: false,
-  },
-  {
-    src: img('lechon/481692615_665399819387490_6825367062903201783_n.jpg'),
-    alt: 'Golden roasted lechon on display',
-    tag: 'Fresh Roast',
-    wide: false,
-  },
-  {
-    src: img('lechon/481784191_665396256054513_8668396699942435463_n.jpg'),
-    alt: 'Whole lechon ready for serving',
-    tag: 'Party Size',
-    wide: true,
-  },
-  {
-    src: img('lechon/481944002_666053845988754_2621315149209642743_n.jpg'),
-    alt: 'Crispy lechon belly close-up',
-    tag: 'Crispy Belly',
-    wide: false,
-  },
-  {
-    src: img('lechon/482019344_666053939322078_6218074537323391433_n.jpg'),
-    alt: 'Lechon prepared for delivery',
-    tag: 'Ready to Go',
-    wide: false,
-  },
-  {
-    src: img('lechon/482057442_665392826054856_5530151939591560375_n.jpg'),
-    alt: 'Roasted lechon with glistening skin',
-    tag: 'Glistening Skin',
-    wide: false,
-  },
-  {
-    src: img('lechon/482216646_666041695989969_7093567185241790847_n.jpg'),
-    alt: 'Lechon feast spread',
-    tag: 'Feast Time',
-    wide: true,
-  },
-  {
-    src: img('lechon/482249096_666054052655400_7965097659664388541_n.jpg'),
-    alt: 'Whole lechon baboy roasted to perfection',
-    tag: 'Perfection',
-    wide: false,
-  },
-  {
-    src: img('lechon/480740443_651704680757004_8283077934209874498_n.jpg'),
-    alt: 'Lechon freshly roasted over coals',
-    tag: 'Over Coals',
-    wide: false,
-  },
-];
+export const GALLERY = LECHON_IMAGES.map((file, i) => ({
+  src: lechon(file),
+  alt: `Lorenzo's Lechon — ${GALLERY_TAGS[i % GALLERY_TAGS.length]}`,
+  tag: GALLERY_TAGS[i % GALLERY_TAGS.length],
+}));
 
 export const STATS = [
   { value: 4, suffix: '', label: 'Years Roasting' },
@@ -151,19 +127,24 @@ export const NAV_LINKS = [
   { href: '#contact', label: 'Order' },
 ];
 
-export const HERO_IMAGE = img(
-  'lechon/480740443_651704680757004_8283077934209874498_n.jpg'
-);
+export const HERO_IMAGE = lechon(LECHON_IMAGES[15]);
+export const ABOUT_IMAGE = lechon(LECHON_IMAGES[17]);
 
-export const ABOUT_IMAGE = HERO_IMAGE;
-
-const reviewModules = import.meta.glob('../../reviews/*.{jpg,jpeg,png}', {
-  eager: true,
-  query: '?url',
-  import: 'default',
-});
-
-export const REVIEW_IMAGES = Object.values(reviewModules);
+export const REVIEW_IMAGES = [
+  '481655799_665384366055702_751848824675598624_n.jpg',
+  '481711641_665399436054195_5773579391317457323_n.jpg',
+  '481767742_665384482722357_8917426660460996334_n.jpg',
+  '481982230_665384409389031_7657815845223972769_n.jpg',
+  '481990896_665384332722372_8415886688875669250_n.jpg',
+  '482003198_665384309389041_7159458115714028666_n.jpg',
+  '482191300_665384202722385_8445131946745072982_n.jpg',
+  '482191889_665390302721775_3099103937250748887_n.jpg',
+  '482205623_665384262722379_881833062048237970_n.jpg',
+  '482210602_665384242722381_2159686767659918086_n.jpg',
+  '482221878_665384469389025_3150318609378314661_n.jpg',
+  '482224149_665384349389037_5520799473103894569_n.jpg',
+  '482243270_665384396055699_1058849029186982483_n.jpg',
+].map((file) => asset(`reviews/${file}`));
 
 export const formatPrice = (amount) =>
   `₱${amount.toLocaleString('en-PH')}`;

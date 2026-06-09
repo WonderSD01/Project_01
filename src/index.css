@@ -20,7 +20,7 @@
   }
 
   body {
-    @apply overflow-x-hidden font-sans;
+    @apply overflow-x-hidden bg-transparent font-sans;
   }
 
   html.dark body {
@@ -37,14 +37,27 @@
 }
 
 @layer components {
+  .text-theme {
+    @apply text-gray-900 dark:text-cream;
+  }
+
+  .text-theme-muted {
+    @apply text-gray-600 dark:text-muted;
+  }
+
+  .card {
+    @apply rounded-2xl border border-black/10 bg-white/85 shadow-glass backdrop-blur-md
+      dark:border-white/10 dark:bg-surface-raised/90;
+  }
+
   .glass {
-    @apply border border-black/10 bg-white/70 shadow-glass backdrop-blur-xl
-      dark:border-white/10 dark:bg-white/[0.04];
+    @apply border border-black/10 bg-white/75 shadow-glass backdrop-blur-xl
+      dark:border-white/10 dark:bg-surface-raised/80;
   }
 
   .glass-strong {
-    @apply border border-black/10 bg-[#FAF7F4]/85 shadow-glass backdrop-blur-2xl
-      dark:border-white/10 dark:bg-surface/80;
+    @apply border border-black/10 bg-white/90 shadow-glass backdrop-blur-2xl
+      dark:border-white/10 dark:bg-surface/90;
   }
 
   .fire-text {
@@ -59,13 +72,13 @@
       hover:-translate-y-0.5 hover:shadow-fire-lg
       active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2
       focus-visible:ring-fire-orange focus-visible:ring-offset-2
-      focus-visible:ring-offset-[#FAF7F4] dark:focus-visible:ring-offset-surface;
+      focus-visible:ring-offset-white dark:focus-visible:ring-offset-surface;
   }
 
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5
       font-bold glass text-gray-900 transition-all duration-300
-      hover:-translate-y-0.5 hover:border-fire-orange/50 hover:bg-white/90
+      hover:-translate-y-0.5 hover:border-fire-orange/50 hover:bg-white
       active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2
       focus-visible:ring-fire-orange dark:text-cream dark:hover:bg-white/[0.08];
   }
@@ -76,6 +89,11 @@
 
   .section-wrap-wide {
     @apply relative mx-auto max-w-5xl px-4 py-16 text-left sm:px-6 sm:py-24;
+  }
+
+  .callout {
+    @apply rounded-2xl border border-fire-orange/30 bg-fire-orange/10 p-4
+      dark:border-fire-orange/30 dark:bg-fire-orange/10;
   }
 }
 

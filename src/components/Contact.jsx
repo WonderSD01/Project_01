@@ -21,7 +21,7 @@ const CONTACTS = [
     href: 'sms:+639970665673',
     label: 'Text Us – 0997-066-5673',
     icon: MessageSquare,
-    className: 'glass text-cream hover:border-fire-orange/40',
+    className: 'glass text-theme hover:border-fire-orange/40',
   },
   {
     href: 'tel:+639970665673',
@@ -39,7 +39,7 @@ export default function Contact() {
       </MotionReveal>
 
       <MotionReveal delay={0.05}>
-        <p className="mb-8 max-w-md text-left text-base leading-relaxed text-muted">
+        <p className="mb-8 max-w-md text-left text-base leading-relaxed text-theme-muted">
           Makipag-ugnayan sa amin para mag-reserve ng inyong lechon. Paunang pag-book para
           matiyak ang availability. Open for pick up and delivery.
         </p>

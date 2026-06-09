@@ -3,8 +3,8 @@ import { LOGO, MAPS_URL } from '../data/siteData';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#060607]/90 px-4 py-10 text-center dark:bg-[#060607]/90">
-      <div className="inline-flex items-center gap-2 font-display text-xl font-black text-cream">
+    <footer className="border-t border-black/10 bg-white/80 px-4 py-10 text-center backdrop-blur-md dark:border-white/10 dark:bg-[#060607]/85">
+      <div className="inline-flex items-center gap-2 font-display text-xl font-black text-theme">
         <img
           src={LOGO}
           alt=""
@@ -12,7 +12,7 @@ export default function Footer() {
         />
         Lorenzo&apos;s Lechon
       </div>
-      <p className="mt-2 text-sm text-muted">
+      <p className="mt-2 text-sm text-theme-muted">
         Open Daily · Pre-order required · Pick up &amp; delivery available
       </p>
       <a

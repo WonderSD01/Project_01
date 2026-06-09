@@ -36,7 +36,7 @@ export function SectionHeading({ eyebrow, title, highlight, center = false }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.05 }}
-        className="font-display text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-cream text-balance leading-tight"
+        className="font-display text-3xl sm:text-4xl font-extrabold text-theme text-balance leading-tight"
       >
         {title}{' '}
         {highlight && <span className="fire-text">{highlight}</span>}

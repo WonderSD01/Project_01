@@ -42,7 +42,7 @@ export default function Reviews() {
           aria-roledescription="carousel"
           aria-label="Customer reviews"
         >
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-surface-raised shadow-glass">
+          <div className="card overflow-hidden">
             <div className="relative">
               <AnimatePresence mode="wait">
                 <motion.button
@@ -59,9 +59,9 @@ export default function Reviews() {
                   <img
                     src={REVIEW_IMAGES[current]}
                     alt={`Customer review screenshot ${current + 1}`}
-                    className="mx-auto max-h-[min(55vh,480px)] w-full object-contain bg-black/40"
+                    className="mx-auto max-h-[min(55vh,480px)] w-full bg-black/20 object-contain dark:bg-black/40"
                   />
-                  <span className="absolute bottom-3 right-3 flex items-center gap-1 rounded-full glass px-3 py-1.5 text-xs font-bold text-cream opacity-0 transition group-hover:opacity-100">
+                  <span className="absolute bottom-3 right-3 flex items-center gap-1 rounded-full glass px-3 py-1.5 text-xs font-bold text-theme opacity-0 transition group-hover:opacity-100">
                     <ZoomIn size={14} /> Tap to enlarge
                   </span>
                 </motion.button>
@@ -74,7 +74,7 @@ export default function Reviews() {
               type="button"
               onClick={prev}
               aria-label="Previous review"
-              className="grid h-11 w-11 shrink-0 place-items-center rounded-full glass transition hover:border-fire-orange/40"
+              className="grid h-11 w-11 shrink-0 place-items-center rounded-full glass text-theme transition hover:border-fire-orange/40"
             >
               <ChevronLeft size={20} />
             </button>
@@ -91,7 +91,7 @@ export default function Reviews() {
                   className={`h-2 rounded-full transition-all duration-300 ${
                     i === current
                       ? 'w-6 bg-fire-orange'
-                      : 'w-2 bg-white/25 hover:bg-white/40'
+                      : 'w-2 bg-black/20 hover:bg-black/35 dark:bg-white/25 dark:hover:bg-white/40'
                   }`}
                 />
               ))}
@@ -101,15 +101,15 @@ export default function Reviews() {
               type="button"
               onClick={next}
               aria-label="Next review"
-              className="grid h-11 w-11 shrink-0 place-items-center rounded-full glass transition hover:border-fire-orange/40"
+              className="grid h-11 w-11 shrink-0 place-items-center rounded-full glass text-theme transition hover:border-fire-orange/40"
             >
               <ChevronRight size={20} />
             </button>
           </div>
 
-          <p className="mt-3 text-center text-sm text-muted" aria-live="polite">
-            Review <span className="font-bold text-cream">{current + 1}</span> of{' '}
-            <span className="font-bold text-cream">{total}</span>
+          <p className="mt-3 text-center text-sm text-theme-muted" aria-live="polite">
+            Review <span className="font-bold text-theme">{current + 1}</span> of{' '}
+            <span className="font-bold text-theme">{total}</span>
           </p>
         </div>
       </MotionReveal>
@@ -129,7 +129,7 @@ export default function Reviews() {
             <button
               type="button"
               onClick={() => setLightbox(false)}
-              className="absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-full glass"
+              className="absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-full glass text-theme"
               aria-label="Close"
             >
               <X size={22} />
