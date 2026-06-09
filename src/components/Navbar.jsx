@@ -19,7 +19,7 @@ export default function Navbar() {
         initial={{ y: -80 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed inset-x-0 top-0 z-50 glass-strong dark:glass-strong"
+        className="fixed inset-x-0 top-0 z-50 glass-strong"
       >
         <motion.div
           className="absolute bottom-0 left-0 h-[2px] bg-fire-gradient origin-left"
@@ -27,12 +27,12 @@ export default function Navbar() {
         />
 
         <nav
-          className="mx-auto flex h-[60px] max-w-5xl items-center justify-between gap-3 px-4 sm:px-6"
+          className="flex h-[60px] w-full items-center justify-start gap-2 px-4 sm:gap-4 sm:px-6"
           aria-label="Main navigation"
         >
           <a
             href="#home"
-            className="group flex min-w-0 items-center gap-2.5 no-underline"
+            className="group flex shrink-0 items-center gap-2.5 no-underline"
             aria-label="Lorenzo's Lechon home"
           >
             <motion.img
@@ -41,7 +41,7 @@ export default function Navbar() {
               alt=""
               className="h-9 w-9 shrink-0 rounded-full border-2 border-fire-orange object-cover"
             />
-            <span className="truncate font-display text-base font-extrabold text-gray-900 dark:text-cream sm:text-lg">
+            <span className="font-display text-base font-extrabold text-theme sm:text-lg">
               Lorenzo&apos;s <span className="fire-text">Lechon</span>
             </span>
           </a>
@@ -51,7 +51,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+                className={`rounded-full px-3 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-200 lg:px-4 ${
                   active === link.href.slice(1)
                     ? 'bg-red-gradient text-white shadow-fire'
                     : 'text-gray-700 hover:bg-black/5 dark:text-cream/80 dark:hover:bg-white/10 dark:hover:text-white'
@@ -60,22 +60,14 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+          </div>
+
+          <div className="ml-auto flex items-center gap-2">
             <button
               type="button"
               onClick={toggleTheme}
               aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-              className="ml-2 grid h-10 w-10 place-items-center rounded-full glass text-gray-800 transition hover:border-fire-orange/40 dark:text-cream"
-            >
-              {isDark ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
-          </div>
-
-          <div className="flex items-center gap-2 md:hidden">
-            <button
-              type="button"
-              onClick={toggleTheme}
-              aria-label="Toggle theme"
-              className="grid h-10 w-10 place-items-center rounded-xl glass text-gray-800 dark:text-cream"
+              className="grid h-10 w-10 place-items-center rounded-full glass text-theme transition hover:border-fire-orange/40"
             >
               {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
@@ -85,7 +77,7 @@ export default function Navbar() {
               aria-expanded={open}
               aria-controls="mobile-menu"
               aria-label={open ? 'Close menu' : 'Open menu'}
-              className="grid h-10 w-10 place-items-center rounded-xl glass text-gray-800 dark:text-cream"
+              className="grid h-10 w-10 place-items-center rounded-xl glass text-theme md:hidden"
             >
               {open ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -107,22 +99,22 @@ export default function Navbar() {
             />
             <motion.div
               id="mobile-menu"
-              initial={{ x: '100%' }}
+              initial={{ x: '-100%' }}
               animate={{ x: 0 }}
-              exit={{ x: '100%' }}
+              exit={{ x: '-100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 320 }}
-              className="fixed bottom-0 right-0 top-[60px] z-50 w-[min(300px,85vw)] border-l border-white/10 bg-[#FAF7F4]/95 p-5 backdrop-blur-2xl dark:bg-surface/95 md:hidden"
+              className="fixed bottom-0 left-0 top-[60px] z-50 w-[min(300px,85vw)] border-r border-black/10 glass-strong p-5 text-left md:hidden dark:border-white/10"
             >
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col items-start gap-2">
                 {NAV_LINKS.map((link, i) => (
                   <motion.a
                     key={link.href}
                     href={link.href}
                     onClick={close}
-                    initial={{ opacity: 0, x: 20 }}
+                    initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05 }}
-                    className={`rounded-xl px-4 py-3.5 text-sm font-bold uppercase tracking-wider ${
+                    className={`w-full rounded-xl px-4 py-3.5 text-left text-sm font-bold uppercase tracking-wider ${
                       active === link.href.slice(1)
                         ? 'bg-red-gradient text-white'
                         : 'text-gray-700 hover:bg-black/5 dark:text-cream/80 dark:hover:bg-white/10'

@@ -24,14 +24,14 @@ export default function HowToOrder() {
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-fire-gradient text-lg font-black text-white shadow-fire">
                   {step.n}
                 </div>
-                <div className="min-w-0 flex-1">
+                <div className="min-w-0 flex-1 text-left">
                   <div className="flex items-center gap-2">
                     <Icon size={16} className="text-fire-orange" aria-hidden />
-                    <h3 className="font-display text-lg font-extrabold text-cream">
+                    <h3 className="font-display text-lg font-extrabold text-theme">
                       {step.title}
                     </h3>
                   </div>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted">{step.text}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-theme-muted">{step.text}</p>
                 </div>
               </div>
             </MotionReveal>

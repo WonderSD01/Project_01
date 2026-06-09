@@ -31,55 +31,59 @@ export default function App() {
   }, []);
 
   return (
-    <div
-      className={`relative min-h-screen transition-colors duration-500 ${
-        isDark ? 'text-cream/90' : 'text-gray-900'
-      }`}
-    >
+    <div className="relative min-h-screen">
       {/* Scrollable page background */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
         <div
           className="absolute inset-0 bg-cover bg-top bg-no-repeat"
-          style={{ backgroundImage: `url(${BG_TEXTURE})` }}
+          style={{ backgroundImage: `url("${BG_TEXTURE}")` }}
+        />
+        <div
+          className={
+            isDark
+              ? 'absolute inset-0 bg-gradient-to-b from-[#0B0B0C]/65 via-[#0B0B0C]/45 to-[#0B0B0C]/70'
+              : 'absolute inset-0 bg-gradient-to-b from-[#FAF7F4]/60 via-[#FAF7F4]/40 to-[#FAF7F4]/65'
+          }
         />
         <div
           className={`absolute inset-0 ${
             isDark
-              ? 'bg-gradient-to-b from-surface/92 via-surface/78 to-surface/95'
-              : 'bg-gradient-to-b from-[#FAF7F4]/88 via-[#FAF7F4]/72 to-[#FAF7F4]/92'
+              ? 'bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(255,122,24,0.12),transparent_70%)]'
+              : 'bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(255,122,24,0.08),transparent_70%)]'
           }`}
         />
-        <div className="absolute inset-0 bg-hero-glow opacity-60 dark:opacity-100" />
       </div>
 
-      <Navbar />
+      <div className="relative z-10">
+        <Navbar />
 
-      <AnimatePresence mode="wait">
-        {loaded && (
-          <motion.main
-            key="main"
-            variants={pageVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            className="pb-24"
-          >
-            <Hero />
-            <Features />
-            <Gallery />
-            <Stats />
-            <PriceList />
-            <HowToOrder />
-            <About />
-            <Reviews />
-            <CTA />
-            <Contact />
-            <Footer />
-          </motion.main>
-        )}
-      </AnimatePresence>
+        <AnimatePresence mode="wait">
+          {loaded && (
+            <motion.main
+              key="main"
+              variants={pageVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              className="pb-24"
+            >
+              <Hero />
+              <Features />
+              <Gallery />
+              <Stats />
+              <PriceList />
+              <HowToOrder />
+              <About />
+              <Reviews />
+              <CTA />
+              <Contact />
+              <Footer />
+            </motion.main>
+          )}
+        </AnimatePresence>
 
-      <StickyBar />
+        <StickyBar />
+      </div>
     </div>
   );
 }

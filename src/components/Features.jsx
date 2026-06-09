@@ -20,23 +20,22 @@ export default function Features() {
             <motion.article
               whileHover={{ y: -6 }}
               transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-              className="group overflow-hidden rounded-2xl glass transition-shadow duration-300 hover:shadow-fire-lg"
+              className="card group overflow-hidden transition-shadow duration-300 hover:shadow-fire-lg"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
-                <motion.img
+                <img
                   src={f.image}
                   alt={f.alt}
-                  className="h-full w-full object-cover"
-                  whileHover={{ scale: 1.08 }}
-                  transition={{ duration: 0.6 }}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition duration-600 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-surface/90 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent dark:from-surface/90" />
               </div>
-              <div className="border-t border-white/10 p-5">
-                <h3 className="font-display text-lg font-extrabold text-gray-900 dark:text-cream">
+              <div className="border-t border-black/10 p-5 dark:border-white/10">
+                <h3 className="font-display text-lg font-extrabold text-theme">
                   {f.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{f.text}</p>
+                <p className="mt-2 text-sm leading-relaxed text-theme-muted">{f.text}</p>
               </div>
             </motion.article>
           </MotionReveal>
