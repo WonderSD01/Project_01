@@ -2,7 +2,7 @@
 const asset = (path) => `/${path.replace(/ /g, '%20')}`;
 
 export const LOGO = asset('download.png');
-export const BG_TEXTURE = asset('lechon/Untitled design (1).png');
+export const BG_TEXTURE = asset('lechon/bg-tile.webp');
 
 export const MAPS_URL = 'https://maps.app.goo.gl/qLsP7hAX2Byi8UyW9';
 
@@ -96,8 +96,16 @@ export const GALLERY = LECHON_IMAGES.map((file, i) => ({
 export const STATS = [
   { value: 4, suffix: '', label: 'Years Roasting' },
   { value: 100, suffix: '%', label: 'Served & Delivered Fresh' },
-  { text: 'Pick Up & Delivery', label: 'Open For' },
 ];
+
+// Smaller social JPGs only — faster hero carousel load
+export const HERO_CAROUSEL = [
+  LECHON_IMAGES[4],
+  LECHON_IMAGES[0],
+  LECHON_IMAGES[6],
+  LECHON_IMAGES[9],
+  LECHON_IMAGES[11],
+].map(lechon);
 
 export const STEPS = [
   {
