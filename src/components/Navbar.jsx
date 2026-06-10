@@ -15,12 +15,7 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.header
-        initial={{ y: -80 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed inset-x-0 top-0 z-50 glass-strong"
-      >
+      <header className="fixed inset-x-0 top-0 z-50 glass-strong">
         <motion.div
           className="absolute bottom-0 left-0 h-[2px] bg-fire-gradient origin-left"
           style={{ scaleX: progress, width: '100%' }}
@@ -46,23 +41,22 @@ export default function Navbar() {
             </span>
           </a>
 
-          <div className="hidden items-center gap-1 md:flex">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`rounded-full px-3 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-200 lg:px-4 ${
-                  active === link.href.slice(1)
-                    ? 'bg-red-gradient text-white shadow-fire'
-                    : 'text-gray-700 hover:bg-black/5 dark:text-cream/80 dark:hover:bg-white/10 dark:hover:text-white'
-                }`}
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-
           <div className="ml-auto flex items-center gap-2">
+            <div className="hidden items-center gap-1 md:flex">
+              {NAV_LINKS.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`rounded-full px-3 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-200 lg:px-4 ${
+                    active === link.href.slice(1)
+                      ? 'bg-red-gradient text-white shadow-fire'
+                      : 'text-gray-700 hover:bg-black/5 dark:text-cream/80 dark:hover:bg-white/10 dark:hover:text-white'
+                  }`}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
             <button
               type="button"
               onClick={toggleTheme}
@@ -83,7 +77,7 @@ export default function Navbar() {
             </button>
           </div>
         </nav>
-      </motion.header>
+      </header>
 
       <AnimatePresence>
         {open && (

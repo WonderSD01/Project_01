@@ -67,7 +67,7 @@ export default function Stats() {
     <section id="stats" className="section-wrap">
       <MotionReveal>
         <div className="overflow-hidden rounded-2xl bg-red-gradient bg-[length:200%_auto] p-6 shadow-fire-lg animate-gradient-x sm:p-8">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-4">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-4">
             {STATS.map((s, i) =>
               s.text ? (
                 <TextStat key={s.label} text={s.text} label={s.label} delay={i * 0.08} />

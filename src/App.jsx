@@ -1,42 +1,33 @@
-import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { lazy, Suspense } from 'react';
 import { useTheme } from './hooks/useTheme';
 import { BG_TEXTURE } from './data/siteData';
 import Navbar from './components/Navbar';
-import StickyBar from './components/StickyBar';
 import Hero from './components/Hero';
-import Features from './components/Features';
-import Gallery from './components/Gallery';
-import Stats from './components/Stats';
-import PriceList from './components/PriceList';
-import HowToOrder from './components/HowToOrder';
-import About from './components/About';
-import Reviews from './components/Reviews';
-import CTA from './components/CTA';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
 
-const pageVariants = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
-  exit: { opacity: 0, transition: { duration: 0.3 } },
-};
+const Features = lazy(() => import('./components/Features'));
+const Gallery = lazy(() => import('./components/Gallery'));
+const Stats = lazy(() => import('./components/Stats'));
+const PriceList = lazy(() => import('./components/PriceList'));
+const HowToOrder = lazy(() => import('./components/HowToOrder'));
+const About = lazy(() => import('./components/About'));
+const Reviews = lazy(() => import('./components/Reviews'));
+const CTA = lazy(() => import('./components/CTA'));
+const Contact = lazy(() => import('./components/Contact'));
+const Footer = lazy(() => import('./components/Footer'));
 
 export default function App() {
   const { isDark } = useTheme();
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    setLoaded(true);
-  }, []);
 
   return (
     <div className="relative min-h-screen">
-      {/* Scrollable page background */}
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
         <div
-          className="absolute inset-0 bg-cover bg-top bg-no-repeat"
-          style={{ backgroundImage: `url("${BG_TEXTURE}")` }}
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("${BG_TEXTURE}")`,
+            backgroundRepeat: 'repeat',
+            backgroundSize: 'auto',
+          }}
         />
         <div
           className={
@@ -57,32 +48,21 @@ export default function App() {
       <div className="relative z-10">
         <Navbar />
 
-        <AnimatePresence mode="wait">
-          {loaded && (
-            <motion.main
-              key="main"
-              variants={pageVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              className="pb-24"
-            >
-              <Hero />
-              <Features />
-              <Gallery />
-              <Stats />
-              <PriceList />
-              <HowToOrder />
-              <About />
-              <Reviews />
-              <CTA />
-              <Contact />
-              <Footer />
-            </motion.main>
-          )}
-        </AnimatePresence>
-
-        <StickyBar />
+        <main className="pb-8">
+          <Hero />
+          <Suspense fallback={null}>
+            <Features />
+            <Gallery />
+            <Stats />
+            <PriceList />
+            <HowToOrder />
+            <About />
+            <Reviews />
+            <CTA />
+            <Contact />
+            <Footer />
+          </Suspense>
+        </main>
       </div>
     </div>
   );
